@@ -24,18 +24,13 @@ const router = express.Router()
 //var methodOverride  = require("method-override")
 const bodyParser = require('body-parser');
 app.use(bodyParser.json());
-app.use((req,res, next) => {
-    res.setHeader("Access-Control-Allow-Origin","*");
-    res.setHeader("Access-Control-Allow-Headers","Origin,X-Requested-With,Content-Type,Accept");
-    res.setHeader("Access-Control-Allow-Methods","*");
+app.use((req, res, next) => {
+    res.setHeader("Access-Control-Allow-Origin", "*");
+    res.setHeader("Access-Control-Allow-Headers", "Origin,X-Requested-With,Content-Type,Accept");
+    res.setHeader("Access-Control-Allow-Methods", "*");
     next();
 });
-//app.use((req,res,next) =>{
-//res.header("Access-Control-Allow-Origin","http://localhost:4200");
-//res.header("Access-Control-Allow-Methods","GET, POST, PUT, DELETE");
-//res.header("Access-Control-Allow-Headers","Access-Control-Allow-Origin, Content-Type, Accept, Accept-Language, Origin, User-Agent");
-//});
-//app.use(methodOverride());
+
 router.get("/", function (req, res) {
     res.send("Holi")
 })
@@ -47,17 +42,17 @@ app.use(router)
 var pokemon = express.Router();
 
 pokemon.route('/pokemon')
-  .get(pokemonroute.findAllpokemon)
-  .post(pokemonroute.addpokemon);
+    .get(pokemonroute.findAllpokemon)
+    .post(pokemonroute.addpokemon);
 
-  pokemon.route('/pokemon/:id')
-  .get(pokemonroute.findById)
-  .post(pokemonroute.updatepokemon)
-  .delete(pokemonroute.deletePokemon);
- 
+pokemon.route('/pokemon/:id')
+    .get(pokemonroute.findById)
+    .post(pokemonroute.updatepokemon)
+    .delete(pokemonroute.deletePokemon);
 
-  app.use('/api',pokemon);
 
-  //starting the server
-  app.listen(PORT, () => console.log(`Listening on http://localhost:${PORT}`));
+app.use('/api', pokemon);
+
+//starting the server
+app.listen(PORT, () => console.log(`Listening on http://localhost:${PORT}`));
 
