@@ -1,0 +1,16 @@
+
+
+        <div class="sidebar">
+        <div class ="title">Pokemons</div>
+    <button class="btn btn-primary btn-rounded-corners add-button" routerLink="/new-pokemon" >Add Pokemons</button>
+        
+        
+        <p class="black-text pokemons" *ngFor="let item of pokemons">
+            {{item._id}} <br>   {{item.nombre}} <br> {{item.numero}}<br> {{item.generacion}} <br> {{item.region}}<br> {{item.tipo}} <br> {{item.evolucion}}<br> {{item.legendario}} <br>{{item.cantidad}} <br> {{item.precio}}$
+        <button class="btn btn-primary btn-rounded-corners" (click)="deletePokemon(item)" >
+        Delete pokemon
+        </button>
+        </p>
+          
+    </div>
+

@@ -1,0 +1,17 @@
+<div class="centered-content">
+    <div class="modal-box form-group">
+        <h1 class="title">Create a new pokemon</h1>
+       
+        <input #pokemonInput1 type="text" class="form-control has-background-light" placeholder="Enter Pokemon name">
+        <input #pokemonInput2 type="number" class="form-control has-background-light" placeholder="Enter Pokemon number">
+        <input #pokemonInput3 type="number" class="form-control has-background-light" placeholder="Enter Pokemon generation">
+        <input #pokemonInput4 type="text" class="form-control has-background-light" placeholder="Enter Pokemon region">
+        <input #pokemonInput5 type="text" class="form-control has-background-light" placeholder="Enter Pokemon type">
+        <input #pokemonInput6 type="number" class="form-control has-background-light" placeholder="Enter Pokemon evolution">
+        <input #pokemonInput7 type="text"  class="form-control has-background-light" placeholder="Is the pokemon legendary ?">
+        <input #pokemonInput8 type="number" class="form-control has-background-light" placeholder="Enter quantity">
+        <input #pokemonInput9 type="number"  class="form-control has-background-light" placeholder="Enter price">
+    <button class="btn " routerLink="/">Cancel</button>
+    <button class="btn btn-primary" (click)="addPokemon(pokemonInput1.value, pokemonInput2.valueAsNumber, pokemonInput3.valueAsNumber, pokemonInput4.value,pokemonInput5.value,pokemonInput6.valueAsNumber,getBoolean(pokemonInput7.value)!,pokemonInput8.valueAsNumber,pokemonInput9.valueAsNumber)" routerLink="/">Add</button>
+    </div>
+</div>
